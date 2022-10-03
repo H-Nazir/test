@@ -1,0 +1,119 @@
+*{margin: 0;padding: 0;box-sizing: border-box;font-family: sans-serif;}
+body{height: 100vh;background: #101025;}
+.container
+{
+    width: 100%;
+    height: 100%;
+    background: #101025;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-areas: "input input info";
+}
+@media (max-width : 991px)
+{
+    .container
+        {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2,1fr);
+            grid-template-areas: "input" "info";
+            row-gap: 80px;
+        }
+}
+.input
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    grid-area:input ;
+    margin: 0 20px;
+}
+textarea
+{
+    width: 400px;
+    height: 200px;
+    padding: 24px;
+    font-size: 1em;
+    margin: 20px 0;
+}
+#counter
+{
+    width: 100px;
+    height: 40px;
+    margin: 20px 0;
+    
+}
+#trans
+{
+    width: 300px;
+    height: 40px;
+    padding:8px 16px;
+    border: none;
+    outline: none;
+    background: #607d8b;
+    font-size: 1em;
+    transition: .6s;
+    color: #fff;
+}
+#trans:hover
+{
+    transform: scale(1.05);
+}
+#trans:active
+{
+    background: #83b0c7;
+}
+
+.info
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 20px;
+    grid-area: "info";
+}
+.card
+{
+    background: #ddd;
+    border-radius: 20px;
+    padding: 4px 16px;
+    position: relative;
+    height: 65px;
+    transition: .3s;
+    overflow: hidden;
+    margin: 20px 0;
+}
+.card:hover
+{
+    height: 200px;
+}
+.card::before
+{
+    content:"1";
+    background: var(--color);
+    padding: 8px 16px;
+    border-radius: 10px;
+    top: 20px;
+    left: 14px;
+    position: absolute;
+}
+.card h2
+{
+    color: #673ab7;
+    position: absolute;
+    left: 67px;
+    top: 22px;
+}
+.card p
+{
+    color: rgba(0, 0, 0, .7);
+    margin-top: 60px;
+    transition: .3s;
+    transition-delay: .1s;
+    transform: translateX(110%);
+}
+.card:hover p
+{
+    transform: translateX(0%);
+}
